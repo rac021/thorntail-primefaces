@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.inra.coby</groupId>
+    <artifactId>psl</artifactId>
+    <version>2.1</version>
+    <packaging>war</packaging>
+    <description>jaxy</description>
+    <url>https://github.com/rac021/Jaxy</url>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <packaging.type>war</packaging.type>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <version.io.thorntail>2.5.0.Final</version.io.thorntail>
+        <primefaces.version>7.0</primefaces.version>
+        <version.jaxy>2.1</version.jaxy>
+    </properties>
+    
+    <dependencyManagement>
+        
+        <dependencies>
+            
+            <dependency>
+                <groupId>io.thorntail</groupId>
+                <artifactId>bom</artifactId>
+                <version>${version.io.thorntail}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            
+        </dependencies>
+        
+    </dependencyManagement>
+    
+    <build>
+   
+        <finalName>psl</finalName>
+   
+        <plugins>
+            <plugin>
+                <groupId>io.thorntail</groupId>
+                <artifactId>thorntail-maven-plugin</artifactId>
+                <version>${version.io.thorntail}</version>
+                <configuration>
+                    <debugPort>11555</debugPort>
+                    <bundleDependencies>true</bundleDependencies>
+<!--                    <mainClass>entry.Main</mainClass>-->
+                    <properties>
+                        <thorntail.bind.address>0.0.0.0</thorntail.bind.address>
+                        <java.net.preferIPv4Stack>false</java.net.preferIPv4Stack>
+                    </properties>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>package</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+        </plugins>
+        
+    </build>
+    
+    <dependencies>
+        
+        <!-- Thorntail ( WildFly Swarm ) Dependencies -->
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>microprofile</artifactId>
+        </dependency>        
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>ejb</artifactId>
+        </dependency>        
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>jsf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
