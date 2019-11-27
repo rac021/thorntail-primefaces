@@ -50,7 +50,6 @@
                 <configuration>
                     <debugPort>11555</debugPort>
                     <bundleDependencies>true</bundleDependencies>
-<!--                    <mainClass>entry.Main</mainClass>-->
                     <properties>
                         <thorntail.bind.address>0.0.0.0</thorntail.bind.address>
                         <java.net.preferIPv4Stack>false</java.net.preferIPv4Stack>
