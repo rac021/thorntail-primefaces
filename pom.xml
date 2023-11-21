@@ -18,7 +18,7 @@
         <packaging.type>war</packaging.type>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <version.io.thorntail>2.5.0.Final</version.io.thorntail>
-        <primefaces.version>7.0</primefaces.version>
+        <primefaces.version>8.0</primefaces.version>
         <version.jaxy>2.1</version.jaxy>
     </properties>
     
